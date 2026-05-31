@@ -1,11 +1,8 @@
 // Generates the HTML for the typing test screen.
-// @param quote The quote the user must type.
-// @returns HTML string for the typing screen.
 export function TypingScreen(quote: string): string {
   return `
     <section class="screen typing-screen">
       <div class="card wide-card">
-
         <h1>Typing Test</h1>
 
         <p id="quote-display" class="quote-text">
@@ -25,10 +22,15 @@ export function TypingScreen(quote: string): string {
           <p>Accuracy: <span id="accuracy">100</span>%</p>
         </div>
 
-        <button id="restart-btn" class="secondary-btn">
-          Restart
-        </button>
+        <div class="button-row">
+          <button id="restart-btn" class="secondary-btn">
+            Restart
+          </button>
 
+          <button id="home-btn" class="primary-btn">
+            Home
+          </button>
+        </div>
       </div>
     </section>
   `;

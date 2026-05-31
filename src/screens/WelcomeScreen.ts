@@ -1,4 +1,4 @@
-// Generates the HTML for the application's welcome screen.
+// Generates the HTML for the welcome screen.
 export function WelcomeScreen(): string {
   return `
     <section class="screen welcome-screen">
@@ -11,6 +11,10 @@ export function WelcomeScreen(): string {
 
         <button id="begin-btn" class="primary-btn">
           Begin Test
+        </button>
+
+        <button id="stats-btn" class="secondary-btn">
+          View Career Stats
         </button>
       </div>
     </section>
