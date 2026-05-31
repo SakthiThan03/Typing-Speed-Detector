@@ -1,0 +1,99 @@
+/* General page setup */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #111827;
+  color: white;
+}
+
+/* Shared layout for every screen */
+.screen {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+/* Main content container */
+.card {
+  background: #1f2937;
+  padding: 36px;
+  border-radius: 18px;
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+}
+
+/* Wider card for the typing screen */
+.wide-card {
+  max-width: 800px;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 42px;
+}
+
+p {
+  font-size: 18px;
+}
+
+/* Quote box shown above the typing area */
+.quote-text {
+  background: #111827;
+  padding: 20px;
+  border-radius: 12px;
+  line-height: 1.6;
+  font-size: 22px;
+}
+
+/* User typing area */
+textarea {
+  width: 100%;
+  height: 150px;
+  margin-top: 20px;
+  padding: 16px;
+  font-size: 20px;
+  border-radius: 12px;
+  border: none;
+  resize: none;
+  box-sizing: border-box;
+}
+
+/* Time, WPM, and accuracy row */
+.stats {
+  display: flex;
+  justify-content: space-around;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+/* Shared button styling */
+button {
+  margin-top: 20px;
+  padding: 12px 28px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Main action button */
+.primary-btn {
+  background: #38bdf8;
+  color: #111827;
+}
+
+/* Secondary action button */
+.secondary-btn {
+  background: #374151;
+  color: white;
+}
+
+/* Large WPM result */
+.result-number {
+  font-size: 48px;
+  font-weight: bold;
+  color: #38bdf8;
+}
