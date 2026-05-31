@@ -1,9 +1,6 @@
-/**
- * Generates the HTML for the typing test screen.
- *
- * @param quote The quote the user must type.
- * @returns HTML string for the typing screen.
- */
+// Generates the HTML for the typing test screen.
+// @param quote The quote the user must type.
+// @returns HTML string for the typing screen.
 export function TypingScreen(quote: string): string {
   return `
     <section class="screen typing-screen">

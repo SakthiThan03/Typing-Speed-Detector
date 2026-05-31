@@ -1,6 +1,4 @@
-/**
- * Generates the HTML for the application's welcome screen.
- */
+// Generates the HTML for the application's welcome screen.
 export function WelcomeScreen(): string {
   return `
     <section class="screen welcome-screen">

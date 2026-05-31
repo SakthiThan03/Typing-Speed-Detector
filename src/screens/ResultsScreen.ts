@@ -1,11 +1,8 @@
-/**
- * Generates the HTML for the results screen.
- *
- * @param wpm Final words per minute score.
- * @param accuracy Final accuracy percentage.
- * @param time Total completion time.
- * @returns HTML string for results screen.
- */
+// Generates the HTML for the results screen.
+// @param wpm Final words per minute score.
+// @param accuracy Final accuracy percentage.
+// @param time Total completion time.
+// @returns HTML string for results screen.
 export function ResultsScreen(
   wpm: number,
   accuracy: number,

@@ -7,17 +7,12 @@ import { WelcomeScreen } from "./screens/WelcomeScreen";
 import { TypingScreen } from "./screens/TypingScreen";
 import { ResultsScreen } from "./screens/ResultsScreen";
 
-/**
- * Root application container.
- */
+// Root application container.
 const app = document.querySelector<HTMLDivElement>("#app")!;
 
-/*
-|--------------------------------------------------------------------------
-| Application State
-|--------------------------------------------------------------------------
-| These variables store data while the user moves between screens.
-*/
+
+
+// Application State: These variables store data while the user moves between screens.
 
 let currentQuote = "";
 let startTime: number | null = null;
@@ -26,9 +21,9 @@ let finalWpm = 0;
 let finalAccuracy = 100;
 let finalTime = 0;
 
-/**
- * Displays the welcome screen.
- */
+
+//Displays the welcome screen.
+
 function showWelcomeScreen(): void {
   app.innerHTML = WelcomeScreen();
 
@@ -39,9 +34,8 @@ function showWelcomeScreen(): void {
   });
 }
 
-/**
- * Displays the typing test screen and handles live typing calculations.
- */
+
+// Displays the typing test screen and handles live typing calculations.
 function showTypingScreen(): void {
   currentQuote = getRandomQuote();
   startTime = null;
@@ -75,22 +69,13 @@ function showTypingScreen(): void {
       Math.floor((Date.now() - startTime) / 1000)
     );
 
-    /*
-    |--------------------------------------------------------------------------
-    | WPM Calculation
-    |--------------------------------------------------------------------------
-    | Words Per Minute = number of typed words / elapsed minutes.
-    */
+    //WPM Calculation: Words Per Minute = number of typed words / elapsed minutes.
     const wordsTyped = typedText.trim().split(/\s+/).filter(Boolean).length;
     const minutes = elapsedSeconds / 60;
     const wpm = Math.round(wordsTyped / minutes);
 
-    /*
-    |--------------------------------------------------------------------------
-    | Accuracy Calculation
-    |--------------------------------------------------------------------------
-    | Compare each typed character with the character in the target quote.
-    */
+   
+    // Accuracy Calculation: Compare each typed character with the character in the target quote.
     let correctCharacters = 0;
 
     for (let i = 0; i < typedText.length; i++) {
@@ -117,13 +102,8 @@ function showTypingScreen(): void {
       accuracyDisplay.textContent = String(accuracy);
     }
 
-    /*
-    |--------------------------------------------------------------------------
-    | Test Completion
-    |--------------------------------------------------------------------------
-    | Once the typed text exactly matches the quote, store final stats
-    | and move to the results screen.
-    */
+
+    // Test Completion: Once the typed text exactly matches the quote, store final stats and move to the results screen.
     if (typedText === currentQuote) {
       finalWpm = wpm;
       finalAccuracy = accuracy;
@@ -138,9 +118,8 @@ function showTypingScreen(): void {
   });
 }
 
-/**
- * Displays the final results screen.
- */
+
+// Displays the final results screen.
 function showResultsScreen(): void {
   app.innerHTML = ResultsScreen(finalWpm, finalAccuracy, finalTime);
 
